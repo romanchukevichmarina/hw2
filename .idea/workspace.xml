@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0efb550-cb6f-426d-83ee-e2ca35b0b4a8" name="Changes" comment="Исправила ошибки в findAllFiles, немного изменила readFile, написала findDependencies без обработки циклических зависимостей">
+    <list default="true" id="a0efb550-cb6f-426d-83ee-e2ca35b0b4a8" name="Changes" comment="Добавила обработку циклических зависимостей и некорректных require">
+      <change afterPath="$PROJECT_DIR$/src/Archive/AnotherCycle/A" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Archive/AnotherCycle/B" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Archive/AnotherCycle/C" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Archive/AnotherCycle/D" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Archive/BigCycle/A" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Archive/BigCycle/B" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Archive/BigCycle/C" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Archive/BigCycle/D" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
@@ -38,6 +46,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/marinaromanchukevich/IdeaProjects/hw222/src/Archive",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -54,7 +63,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1673376830138</updated>
-      <workItem from="1673376831201" duration="19469000" />
+      <workItem from="1673376831201" duration="20701000" />
     </task>
     <task id="LOCAL-00001" summary="Добавлен проход по всем файлам, сформирован ArrayList из них">
       <created>1673380581871</created>
@@ -91,7 +100,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673397699348</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Добавила обработку циклических зависимостей и некорректных require">
+      <created>1673465022797</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1673465022797</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -112,7 +128,8 @@
     <MESSAGE value="Добавлен проход по всем файлам, сформирован ArrayList из них" />
     <MESSAGE value="Создан пустой массив для отсортированного массива файлов, реализовано чтение файлов и создан метод для поиска зависимостей" />
     <MESSAGE value="Исправила ошибки в findAllFiles, немного изменила readFile, написала findDependencies без обработки циклических зависимостей" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправила ошибки в findAllFiles, немного изменила readFile, написала findDependencies без обработки циклических зависимостей" />
+    <MESSAGE value="Добавила обработку циклических зависимостей и некорректных require" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавила обработку циклических зависимостей и некорректных require" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -121,11 +138,6 @@
           <properties class="java.lang.IndexOutOfBoundsException" package="java.lang" />
           <option name="timeStamp" value="14" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>39</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

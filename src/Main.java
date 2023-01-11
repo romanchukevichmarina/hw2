@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class Main {
-    static String root = "src/Archive/BasicCycle";
+    static String root = "src/Archive/AnotherCycle";
 
     public static void main(String[] args) {
         File dir = new File(root);
