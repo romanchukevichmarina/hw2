@@ -28,9 +28,9 @@ public class Main {
             }
     }
 
-    private static void findDependencies(ArrayList<File> arr, ArrayList<File> sortedArr, File item, String s, ArrayList<String> stringArr) throws Exception {
-        if (s.contains("require")) {
-            String[] strArr = s.split(" ");
+    private static void findDependencies(ArrayList<File> arr, ArrayList<File> sortedArr, File item, String text, ArrayList<String> stringArr) throws Exception {
+        if (text.contains("require")) {
+            String[] strArr = text.split(" ");
             int index = 0;
             for (int i = 0; i < strArr.length; ++i) {
                 if (Objects.equals(strArr[i], "require")) {
@@ -47,10 +47,10 @@ public class Main {
                 }
             }
             sortedArr.add(index + 1, item);
-            stringArr.add(index + 1, s);
+            stringArr.add(index + 1, text);
         } else {
             sortedArr.add(0, item);
-            stringArr.add(0, s);
+            stringArr.add(0, text);
         }
     }
 
