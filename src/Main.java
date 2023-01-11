@@ -2,7 +2,16 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Objects;
 
+/**
+ * ДЗ2 по КПО
+ *
+ * @author Марина Романчукевич БПИ216
+ */
 public class Main {
+
+    /**
+     * поле пути к корневой папке с файлами
+     */
     static String root = "src/Archive/BasicExample";
 
     public static void main(String[] args) throws IOException {
@@ -17,6 +26,16 @@ public class Main {
                 if (findDependencies(arr, sortedArr, item, readFile(item), stringArr, children)) return;
             }
         }
+        writingResult(stringArr);
+    }
+
+    /**
+     * функция для вывода результата
+     *
+     * @param stringArr - коллекция строк из файлов (уже в правильном порядке)
+     * @throws IOException - исключение в блоке catch для потока ввода
+     */
+    private static void writingResult(ArrayList<String> stringArr) throws IOException {
         File ans = new File("src/Archive/ans");
         boolean b = true;
         if (!ans.exists()) b = ans.createNewFile();
@@ -33,6 +52,12 @@ public class Main {
         }
     }
 
+    /**
+     * функция для чтения файлов
+     *
+     * @param item - файл, который нужно прочитать
+     * @return - содержимое item
+     */
     private static String readFile(File item) {
         try (BufferedReader br = new BufferedReader(new FileReader(item))) {
             String s;
@@ -47,6 +72,17 @@ public class Main {
         }
     }
 
+    /**
+     * рекурсивная функция поиска зависимостей
+     *
+     * @param arr       - несортированная коллекция всех файлов
+     * @param sortedArr - вспомогательная сортированная коллекция файлов, заполняется в функции
+     * @param item      - текущий файл, который надо поместить в sortedArr
+     * @param text      - содержимое текущего файла
+     * @param stringArr - сортированная коллекция строк, заполняется в функции
+     * @param children  - коллекция для выявления циклических зависисмостей
+     * @return true - если найдена циклическая зависимость или другая ошибка, false - если все ок
+     */
     private static boolean findDependencies(ArrayList<File> arr, ArrayList<File> sortedArr, File item, String text, ArrayList<String> stringArr, ArrayList<File> children) {
         if (text.contains("require")) {
             String[] requires = text.split("require");
@@ -81,6 +117,12 @@ public class Main {
         return false;
     }
 
+    /**
+     * функция для поиска всех фалов в корневой папке и ее директориях
+     *
+     * @param dir - файл корневой папки
+     * @param arr - коллекция, в которую добавляются все найденные файлы
+     */
     private static void findAllFiles(File dir, ArrayList<File> arr) {
         if (dir.isDirectory()) {
             for (File item : Objects.requireNonNull(dir.listFiles())) {

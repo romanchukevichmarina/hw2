@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0efb550-cb6f-426d-83ee-e2ca35b0b4a8" name="Changes" comment="Добавила тестовых директорий">
+    <list default="true" id="a0efb550-cb6f-426d-83ee-e2ca35b0b4a8" name="Changes" comment="Подправила findDependencies, сделала вывод результата в текстовый файл">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Archive/BasicExample/Folder 1/File 1-1" beforeDir="false" afterPath="$PROJECT_DIR$/src/Archive/BasicExample/Folder 1/File 1-1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Archive/BasicExample/Folder 2/File 2-1" beforeDir="false" afterPath="$PROJECT_DIR$/src/Archive/BasicExample/Folder 2/File 2-1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Archive/BasicExample/Folder 2/File 2-2" beforeDir="false" afterPath="$PROJECT_DIR$/src/Archive/BasicExample/Folder 2/File 2-2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,7 +60,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1673376830138</updated>
-      <workItem from="1673376831201" duration="22751000" />
+      <workItem from="1673376831201" duration="23901000" />
     </task>
     <task id="LOCAL-00001" summary="Добавлен проход по всем файлам, сформирован ArrayList из них">
       <created>1673380581871</created>
@@ -114,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673465823294</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Подправила findDependencies, сделала вывод результата в текстовый файл">
+      <created>1673467972513</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1673467972513</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,7 +141,8 @@
     <MESSAGE value="Исправила ошибки в findAllFiles, немного изменила readFile, написала findDependencies без обработки циклических зависимостей" />
     <MESSAGE value="Добавила обработку циклических зависимостей и некорректных require" />
     <MESSAGE value="Добавила тестовых директорий" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавила тестовых директорий" />
+    <MESSAGE value="Подправила findDependencies, сделала вывод результата в текстовый файл" />
+    <option name="LAST_COMMIT_MESSAGE" value="Подправила findDependencies, сделала вывод результата в текстовый файл" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
