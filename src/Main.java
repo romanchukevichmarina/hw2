@@ -3,9 +3,9 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class Main {
-    static String root = "src/Archive/AnotherCycle";
+    static String root = "src/Archive/BasicExample";
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         File dir = new File(root);
         ArrayList<File> arr = new ArrayList<>();
         findAllFiles(dir, arr);
@@ -17,19 +17,31 @@ public class Main {
                 if (findDependencies(arr, sortedArr, item, readFile(item), stringArr, children)) return;
             }
         }
-        for (File item : Objects.requireNonNull(sortedArr)) {
-            System.out.println(item.getName());
+        File ans = new File("src/Archive/ans");
+        boolean b = true;
+        if (!ans.exists()) b = ans.createNewFile();
+        if (b) {
+            try (FileWriter writer = new FileWriter(ans, false)) {
+                for (String s : Objects.requireNonNull(stringArr)) {
+                    writer.append(s);
+                }
+                writer.flush();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            System.out.println("Result in file 'ans' in src/Archive");
         }
     }
 
     private static String readFile(File item) {
         try (BufferedReader br = new BufferedReader(new FileReader(item))) {
             String s;
-            String allStr = "";
+            StringBuilder allStr = new StringBuilder();
             while ((s = br.readLine()) != null) {
-                allStr = allStr.concat(s);
+                allStr.append(s);
+                allStr.append("\n");
             }
-            return allStr;
+            return allStr.toString();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -47,13 +59,14 @@ public class Main {
                     System.out.println("Incorrect require path in file" + item.getName());
                     return true;
                 }
-                if (!sortedArr.contains(parent) && !children.contains(parent))
+                if (!sortedArr.contains(parent)) {
+                    if (children.contains(parent)) {
+                        System.out.print("Can't find dependencies: circle in files ");
+                        children.forEach(f -> System.out.print("'" + f.getName() + "' "));
+                        System.out.println();
+                        return true;
+                    }
                     if (findDependencies(arr, sortedArr, parent, readFile(parent), stringArr, children)) return true;
-                if (children.contains(parent)) {
-                    System.out.print("Can't find dependencies: circle in files ");
-                    children.forEach(f -> System.out.print("'" + f.getName() + "' "));
-                    System.out.println();
-                    return true;
                 }
                 int j = sortedArr.indexOf(parent);
                 if (index < j) index = j;
